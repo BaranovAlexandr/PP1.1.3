@@ -1,6 +1,0 @@
-    try {
-            Util util = new Util();
-            Statement statement = util.getConnection().createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
