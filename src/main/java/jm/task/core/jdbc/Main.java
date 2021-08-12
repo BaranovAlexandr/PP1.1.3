@@ -19,6 +19,7 @@ public class Main {
         clerk.saveUser("Ivan", "Ivanov", (byte) 40);
         clerk.saveUser("Genadiy", "Bookin", (byte) 35);
         List<User> users = clerk.getAllUsers();
+        System.out.println("pivo");
         for (User user : users) {
             System.out.println(user);
         }
