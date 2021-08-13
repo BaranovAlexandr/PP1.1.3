@@ -12,17 +12,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        UserService clerk = new UserServiceImpl();
-        clerk.createUsersTable();
-        clerk.saveUser("Alexandr", "Baranov", (byte) 23);
-        clerk.saveUser("Slava", "Ukraincev", (byte) 16);
-        clerk.saveUser("Ivan", "Ivanov", (byte) 40);
-        clerk.saveUser("Genadiy", "Bookin", (byte) 35);
-        List<User> users = clerk.getAllUsers();
+        UserService userService = new UserServiceImpl();
+        userService.createUsersTable();
+        userService.saveUser("Alexandr", "Baranov", (byte) 23);
+        userService.saveUser("Slava", "Ukraincev", (byte) 16);
+        userService.saveUser("Ivan", "Ivanov", (byte) 40);
+        userService.saveUser("Genadiy", "Bookin", (byte) 35);
+        List<User> users = userService.getAllUsers();
         for (User user : users) {
             System.out.println(user);
         }
-        clerk.cleanUsersTable();
-        clerk.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }

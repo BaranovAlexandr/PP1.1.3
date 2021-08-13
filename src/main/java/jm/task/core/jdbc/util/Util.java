@@ -9,15 +9,17 @@ public class Util {
     private final String password = "Salam228!";
     private final String connectionUrl = "jdbc:mysql://localhost:3306/test";
 
-    public  Connection getConnection() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(connectionUrl, userName, password);
-            return connection;
+    private Connection connection;
+
+    public Util() {
+        try { Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(connectionUrl, userName, password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+    }
+    public Connection getConnection() {
+        return connection;
     }
 
 }
