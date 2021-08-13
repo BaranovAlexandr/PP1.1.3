@@ -18,6 +18,7 @@ public class Main {
         userService.saveUser("Slava", "Ukraincev", (byte) 16);
         userService.saveUser("Ivan", "Ivanov", (byte) 40);
         userService.saveUser("Genadiy", "Bookin", (byte) 35);
+
         List<User> users = userService.getAllUsers();
         for (User user : users) {
             System.out.println(user);
