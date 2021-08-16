@@ -79,7 +79,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         try (Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            List<User> list = session.createCriteria(User.class).list();
+            List<User> list = session.createQuery("select p from User p", User.class).getResultList();
             transaction.commit();
             return list;
         } catch (HibernateException e) {
